@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Coping Strategies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Crimson Text', serif;
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .expanded {
+            max-height: 3000px;
+            opacity: 1;
+        }
+        .collapsed {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        .scale-101 {
+            transform: scale(1.01);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-stone-50 via-slate-50 to-zinc-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-stone-200/50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-6">
+            <div class="flex items-center justify-between flex-wrap gap-4">
+                <div>
+                    <h1 class="text-3xl font-serif font-bold text-stone-800 tracking-tight">
+                        Stress Coping Strategies
+                    </h1>
+                    <p class="text-sm text-stone-500 mt-1 font-light">
+                        Research-backed ways to manage stress and feel better
+                    </p>
+                </div>
+                <div class="flex gap-2">
+                    <button
+                        onclick="showTab('strategies')"
+                        id="strategies-tab"
+                        class="px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 bg-stone-800 text-white shadow-lg shadow-stone-800/20"
+                    >
+                        Strategies
+                    </button>
+                    <button
+                        onclick="showTab('sources')"
+                        id="sources-tab"
+                        class="px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 bg-white text-stone-600 hover:bg-stone-100 border border-stone-200 flex items-center gap-2"
+                    >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        Sources
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Strategies Tab Content -->
+        <div id="strategies-content">
+            <!-- Introduction -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-stone-200/50 mb-8">
+                <p class="text-lg text-stone-700 leading-relaxed font-light">
+                    Stress is an inevitable part of modern life, but how we respond to it makes all the difference. 
+                    These four evidence-based coping strategies offer multiple ways to reduce stress, each backed by 
+                    scientific research and centuries of human experience. Whether you're drawn to the artistic expression 
+                    of music, being outside in nature, the creativity of cooking, or the focused freedom of 
+                    riding, you'll find practical techniques to restore balance and increase well-being.
+                </p>
+            </div>
+
+            <!-- Music Strategy -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-violet-400/30 transition-all duration-500 hover:shadow-lg mb-8">
+                <button onclick="toggleStrategy('music')" class="w-full">
+                    <div class="bg-gradient-to-r from-violet-500/20 to-purple-500/20 p-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-violet-50 p-4 rounded-xl shadow-sm">
+                                    <svg class="text-violet-600" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M9 18V5l12-2v13"></path>
+                                        <circle cx="6" cy="18" r="3"></circle>
+                                        <circle cx="18" cy="16" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="text-left">
+                                    <h2 class="text-3xl font-serif font-bold text-stone-800">Music Therapy</h2>
+                                </div>
+                            </div>
+                            <svg id="music-chevron" class="text-violet-600 transition-transform duration-500" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+
+                <div id="music-content" class="transition-all duration-500 expanded">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800" alt="Music Therapy" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                    </div>
+
+                    <div class="p-8 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-violet-600">How to Use This Strategy</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-violet-50 text-violet-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">1</span>
+                                    <span class="text-stone-700 leading-relaxed">Create a playlist for different moods</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-violet-50 text-violet-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">2</span>
+                                    <span class="text-stone-700 leading-relaxed">Set aside 15-30 minutes a day for intentional listening</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-violet-50 text-violet-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">3</span>
+                                    <span class="text-stone-700 leading-relaxed">Try active music engagement: singing, playing an instrument, or moving to rhythms</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-violet-50 text-violet-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">4</span>
+                                    <span class="text-stone-700 leading-relaxed">Use noise-canceling headphones to create an immersive experience</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-violet-50 text-violet-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">5</span>
+                                    <span class="text-stone-700 leading-relaxed">Experiment with different genres: classical for focus, nature sounds for relaxation, upbeat for energy</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-violet-50 rounded-xl p-6 border border-violet-400/30">
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-violet-600">Why It Helps</h3>
+                            <p class="text-stone-700 leading-relaxed">
+                                Music activates the brain's reward centers, releasing dopamine and reducing cortisol levels. It provides emotional regulation by allowing us to process feelings through sound, creates a sense of control in chaotic moments, and can shift our mind state through rhythm entrainment—where our heart rate and breathing synchronize with musical tempo.[1][2]
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-violet-600">History & Scientific Evidence</h3>
+                            <p class="text-stone-700 leading-relaxed">
+                                Music as medicine dates back to ancient civilizations. The Greeks used music in healing temples, believing in its power to restore balance to body and soul. Modern music therapy emerged in the 1940s when musicians played for World War II veterans suffering from trauma.[3] Today, neuroscience reveals that music engages multiple brain regions simultaneously, making it one of the most powerful non-drug releases for stress and anxiety.[4]
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hiking Strategy -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-emerald-400/30 transition-all duration-500 hover:shadow-lg mb-8">
+                <button onclick="toggleStrategy('hiking')" class="w-full">
+                    <div class="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 p-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-emerald-50 p-4 rounded-xl shadow-sm">
+                                    <svg class="text-emerald-600" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                                    </svg>
+                                </div>
+                                <div class="text-left">
+                                    <h2 class="text-3xl font-serif font-bold text-stone-800">Hiking & Nature Immersion</h2>
+                                </div>
+                            </div>
+                            <svg id="hiking-chevron" class="text-emerald-600 transition-transform duration-500" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+
+                <div id="hiking-content" class="transition-all duration-500 collapsed">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Hiking" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                    </div>
+
+                    <div class="p-8 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-emerald-600">How to Use This Strategy</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-emerald-50 text-emerald-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">1</span>
+                                    <span class="text-stone-700 leading-relaxed">Start with short, easy trails (30-45 minutes) and gradually increase duration</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-emerald-50 text-emerald-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">2</span>
+                                    <span class="text-stone-700 leading-relaxed">Practice walking slowly, engaging all five senses</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-emerald-50 text-emerald-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">3</span>
+                                    <span class="text-stone-700 leading-relaxed">Leave devices behind or on airplane mode to fully disconnect</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-emerald-50 text-emerald-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">4</span>
+                                    <span class="text-stone-700 leading-relaxed">Focus on rhythmic breathing in sync with your steps</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-emerald-50 text-emerald-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">5</span>
+                                    <span class="text-stone-700 leading-relaxed">Notice details: textures of bark, patterns of leaves, sounds of wildlife</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-emerald-50 text-emerald-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">6</span>
+                                    <span class="text-stone-700 leading-relaxed">Go solo for some alone time or with others for the social aspect</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-400/30">
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-emerald-600">Why It Helps</h3>
+                            <p class="text-stone-700 leading-relaxed">
+                                Nature exposure reduces pondering and quiets the brain's default mode network, which is hyperactive during stress and depression.[5] Physical movement releases endorphins, while natural environments lower cortisol and blood pressure. Hiking combines cardiovascular exercise, mindfulness, and nature-oriented connection.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-emerald-600">History & Scientific Evidence</h3>
+                            <p class="text-stone-700 leading-relaxed">
+                                Indigenous cultures worldwide have long recognized nature's healing properties, incorporating wilderness experiences into rites of passage and healing ceremonies. The modern hiking movement began in the Romantic era (late 1700s) as a rebellion against industrialization. John Muir and the philosophers defended nature's restorative powers in the 1800s.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cooking Strategy -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-amber-400/30 transition-all duration-500 hover:shadow-lg mb-8">
+                <button onclick="toggleStrategy('cooking')" class="w-full">
+                    <div class="bg-gradient-to-r from-amber-500/20 to-orange-500/20 p-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-amber-50 p-4 rounded-xl shadow-sm">
+                                    <svg class="text-amber-600" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path>
+                                        <line x1="6" y1="17" x2="18" y2="17"></line>
+                                    </svg>
+                                </div>
+                                <div class="text-left">
+                                    <h2 class="text-3xl font-serif font-bold text-stone-800">Culinary Mindfulness</h2>
+                                </div>
+                            </div>
+                            <svg id="cooking-chevron" class="text-amber-600 transition-transform duration-500" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+
+                <div id="cooking-content" class="transition-all duration-500 collapsed">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800" alt="Cooking" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                    </div>
+
+                    <div class="p-8 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-amber-600">How to Use This Strategy</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-amber-50 text-amber-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">1</span>
+                                    <span class="text-stone-700 leading-relaxed">Choose recipes that match your stress level (Simple foods for when overwhelmed, complex when you have the energy)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-amber-50 text-amber-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">2</span>
+                                    <span class="text-stone-700 leading-relaxed">Engage senses deliberately: smell herbs, feel textures, observe color transformations</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-amber-50 text-amber-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">3</span>
+                                    <span class="text-stone-700 leading-relaxed">Prep your ingredients mindfully before you start cooking</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-amber-50 text-amber-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">4</span>
+                                    <span class="text-stone-700 leading-relaxed">Cook without distractions: no phone, minimal multitasking</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-amber-50 text-amber-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">5</span>
+                                    <span class="text-stone-700 leading-relaxed">Focus on the process, not perfection—view "mistakes" as experiments</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-amber-50 text-amber-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">6</span>
+                                    <span class="text-stone-700 leading-relaxed">Share what you make with others - adds a nice social element</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-amber-50 rounded-xl p-6 border border-amber-400/30">
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-amber-600">Why It Helps</h3>
+                            <p class="text-stone-700 leading-relaxed">
+                                Cooking is a multisensory activity that anchors attention in the present moment, interrupting stress-inducing thought patterns.[9] Creating something physical provides a sense of accomplishment and control, counteracting feelings of helplessness common in stress. Nourishing yourself or others activates caregiving neural circuits associated with emotional wellbeing.[10] The creative problem-solving in cooking also provides healthy cognitive engagement.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-amber-600">History & Scientific Evidence</h3>
+                            <p class="text-stone-700 leading-relaxed">
+                                Throughout history, food preparation has been a communal, ritualistic activity central to culture and connection. The modern concept of "cooking therapy" emerged from occupational therapy in the 1940s-50s. Julia Child popularized cooking as a joyful, accessible practice in the 1960s. Recent research in food and nutrition for a healthy mind, and behavioural activation therapy has validated cooking's mental health benefits, with programs now using culinary therapy for depression, PTSD, and substance abuse recovery.[11][12]
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Motorbiking Strategy -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-400/30 transition-all duration-500 hover:shadow-lg mb-8">
+                <button onclick="toggleStrategy('motorbiking')" class="w-full">
+                    <div class="bg-gradient-to-r from-slate-500/20 to-blue-500/20 p-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-slate-50 p-4 rounded-xl shadow-sm">
+                                    <svg class="text-slate-600" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <circle cx="18.5" cy="17.5" r="3.5"></circle>
+                                        <circle cx="5.5" cy="17.5" r="3.5"></circle>
+                                        <circle cx="15" cy="5" r="1"></circle>
+                                        <path d="M12 17.5V14l-3-3 4-3 2 3h2"></path>
+                                    </svg>
+                                </div>
+                                <div class="text-left">
+                                    <h2 class="text-3xl font-serif font-bold text-stone-800">Motorbiking & Riding</h2>
+                                </div>
+                            </div>
+                            <svg id="motorbiking-chevron" class="text-slate-600 transition-transform duration-500" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+
+                <div id="motorbiking-content" class="transition-all duration-500 collapsed">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800" alt="Motorbiking" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                    </div>
+
+                    <div class="p-8 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-slate-600">How to Use This Strategy</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-slate-50 text-slate-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">1</span>
+                                    <span class="text-stone-700 leading-relaxed">Prioritize safety: proper gear (helmet, jacket, gloves), regular maintenance, and defensive riding</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-slate-50 text-slate-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">2</span>
+                                    <span class="text-stone-700 leading-relaxed">Plan routes intentionally—scenic backroads over highways for stress relief</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-slate-50 text-slate-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">3</span>
+                                    <span class="text-stone-700 leading-relaxed">Practice mindful riding: full attention on road, bike, and environment</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-slate-50 text-slate-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">4</span>
+                                    <span class="text-stone-700 leading-relaxed">Use preriding checklist (checking gear) to transition into being present in the moment</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-slate-50 text-slate-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">5</span>
+                                    <span class="text-stone-700 leading-relaxed">Mix it up: solo rides for solo time, group rides for the community vibe</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="bg-slate-50 text-slate-600 font-semibold text-sm px-2.5 py-1 rounded-md mt-0.5 flex-shrink-0">6</span>
+                                    <span class="text-stone-700 leading-relaxed">Take breaks to actually enjoy where you are instead of just rushing to get somewhere</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-400/30">
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-slate-600">Why It Helps</h3>
+                            <p class="text-stone-700 leading-relaxed">
+                                Motorbiking demands complete present-moment awareness, creating a natural meditative state where past regrets and future anxieties dissolve.[13] The physical engagement, balance, coordination, and sensory processing occupy the mind fully, providing a mental break. The sense of freedom and adventure triggers reward pathways, while mastering a machine builds confidence. Riding also offers controlled risk-taking in a structured way, which can be therapeutic for those feeling stuck or powerless. The vibration and motion can have a calming effect on the nervous system.[14]
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold mb-4 text-slate-600">History & Scientific Evidence</h3>
+                            <p class="text-stone-700 leading-relaxed">
+                                Motorcycles emerged in the late 1800s as motorized bicycles. Post-WWII, returning veterans found solace in riding, forming motorcycle clubs that provided community and purpose. The 1960s counterculture embraced motorcycling as an expression of freedom and rebellion against conformity. In recent decades, riding has been recognized for therapeutic benefits, with programs like "Bikers Against Child Abuse" and "Motorcycle Therapy" groups emerging. Research on flow states and adventure therapy validates what riders have known intuitively: the bike offers a unique combination of focus, freedom, and embodied presence that serves as powerful stress medicine.[15][16]
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sources Tab Content -->
+        <div id="sources-content" class="hidden">
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-stone-200/50">
+                <h2 class="text-3xl font-serif font-bold text-stone-800 mb-6">References & Sources</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[1] Victor, David. 2023. "How Music Can Reduce Stress and Improve Mental Health." Harmony & Healing. <a href="https://www.harmonyandhealing.org/how-music-can-reduce-stress/" target="_blank" class="text-violet-600 hover:underline">https://www.harmonyandhealing.org/how-music-can-reduce-stress/</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[2] Koelsch, Stefan. 2014. "Brain Correlates of Music-Evoked Emotions." <em>Nature Reviews Neuroscience</em> 15 (3): 170-180. <a href="https://www.nature.com/articles/nrn3666" target="_blank" class="text-violet-600 hover:underline">https://www.nature.com/articles/nrn3666</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[3] Music Therapy Connections. "What Is Music Therapy?" Accessed February 11, 2026. <a href="https://musictherapyconnections.org/what-is-music-therapy/" target="_blank" class="text-violet-600 hover:underline">https://musictherapyconnections.org/what-is-music-therapy/</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[4] "The Transformative Power of Music on the Brain." 2024. <em>PMC</em>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10765015/" target="_blank" class="text-violet-600 hover:underline">https://pmc.ncbi.nlm.nih.gov/articles/PMC10765015/</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[5] Bratman, Gregory N., J. Paul Hamilton, Kevin S. Hahn, Gretchen C. Daily, and James J. Gross. 2015. "Nature Experience Reduces Rumination and Subgenual Prefrontal Cortex Activation." <em>Proceedings of the National Academy of Sciences</em> 112 (28): 8567-8572. <a href="https://texanbynature.org/wp-content/uploads/2016/10/Bratman-et-al.-2015-Nature-experience-reduces-rumination-and-sgPFC-activation-PNAS.pdf" target="_blank" class="text-violet-600 hover:underline">https://texanbynature.org/wp-content/uploads/2016/10/Bratman-et-al.-2015-Nature-experience-reduces-rumination-and-sgPFC-activation-PNAS.pdf</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[9] Farmer, Nicole, Katherine Touchton-Leonard, and Alyson Ross. 2018. "Psychosocial Benefits of Cooking Interventions: A Systematic Review." <em>Health Education & Behavior</em> 45 (2): 167-180. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5862744/" target="_blank" class="text-violet-600 hover:underline">https://pmc.ncbi.nlm.nih.gov/articles/PMC5862744/</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[10] Cassata, Cathy. 2015. "Kitchen Therapy: Cooking for Mental Well-Being." <em>Psychology Today</em>. <a href="https://www.psychologytoday.com/us/blog/minding-the-body/201505/kitchen-therapy-cooking-mental-well-being" target="_blank" class="text-violet-600 hover:underline">https://www.psychologytoday.com/us/blog/minding-the-body/201505/kitchen-therapy-cooking-mental-well-being</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[11] Auguste Escoffier School of Culinary Arts. "How Cooking Therapy Creates Calm in the Kitchen and Beyond." <em>Escoffier</em>. <a href="https://www.escoffier.edu/blog/health-wellness-careers/how-cooking-therapy-creates-calm-in-the-kitchen-and-beyond/" target="_blank" class="text-violet-600 hover:underline">https://www.escoffier.edu/blog/health-wellness-careers/how-cooking-therapy-creates-calm-in-the-kitchen-and-beyond/</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[12] Axe, Josh. "Cooking Therapy: Boost Mental Health by Cooking at Home." <em>Dr. Axe</em>. <a href="https://draxe.com/health/cooking-therapy/" target="_blank" class="text-violet-600 hover:underline">https://draxe.com/health/cooking-therapy/</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[13] Babaei, Masoud, Azita Asayesh, Zahra Shamsipour, Mansoor Bodaghi, Maliheh Dadgarmoghaddam, and Mona Mehrabi. 2021. "The Effect of Motorcycle Riding on Mental Health and Marital Satisfaction." <em>Journal of Injury and Violence Research</em> 13 (1). <a href="https://pubmed.ncbi.nlm.nih.gov/33482998/" target="_blank" class="text-violet-600 hover:underline">https://pubmed.ncbi.nlm.nih.gov/33482998/</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[14] Motorcycle Missions. "The Mental Health Benefits of Riding, Backed by Science." <em>Motorcycle Missions Blog</em>. <a href="https://motorcyclemissions.org/blogs/blog/the-mental-health-benefits-of-riding-backed-by-science" target="_blank" class="text-violet-600 hover:underline">https://motorcyclemissions.org/blogs/blog/the-mental-health-benefits-of-riding-backed-by-science</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[15] Tremblay, Elise. 2025. "Finding Stillness in Motion: How Riding a Motorcycle Can Teach Us Mindfulness." <em>The Conversation</em>. <a href="https://theconversation.com/finding-stillness-in-motion-how-riding-a-motorcycle-can-teach-us-mindfulness-272396" target="_blank" class="text-violet-600 hover:underline">https://theconversation.com/finding-stillness-in-motion-how-riding-a-motorcycle-can-teach-us-mindfulness-272396</a></p>
+                    </div>
+                    <div class="border-l-4 border-stone-300 pl-6 py-2 hover:border-stone-500 transition-colors duration-300">
+                        <p class="text-stone-700 leading-relaxed">[16] Jewish Family and Children's Service of Minneapolis. "The Mental Health Benefits of Riding a Motorcycle." <em>JFCS Minneapolis</em>. <a href="https://jfcsmpls.org/the-mental-health-benefits-of-riding-a-motorcycle/" target="_blank" class="text-violet-600 hover:underline">https://jfcsmpls.org/the-mental-health-benefits-of-riding-a-motorcycle/</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-800 text-white py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-stone-300 text-sm">
+                This is for educational purposes only - not a replacement for professional help.
+            </p>
+            <p class="text-stone-400 text-xs mt-2">
+                If you're dealing with serious stress or mental health stuff, please talk to a professional.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching
+        function showTab(tabName) {
+            const strategiesContent = document.getElementById('strategies-content');
+            const sourcesContent = document.getElementById('sources-content');
+            const strategiesTab = document.getElementById('strategies-tab');
+            const sourcesTab = document.getElementById('sources-tab');
+
+            if (tabName === 'strategies') {
+                strategiesContent.classList.remove('hidden');
+                sourcesContent.classList.add('hidden');
+                strategiesTab.className = 'px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 bg-stone-800 text-white shadow-lg shadow-stone-800/20';
+                sourcesTab.className = 'px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 bg-white text-stone-600 hover:bg-stone-100 border border-stone-200 flex items-center gap-2';
+            } else {
+                strategiesContent.classList.add('hidden');
+                sourcesContent.classList.remove('hidden');
+                strategiesTab.className = 'px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 bg-white text-stone-600 hover:bg-stone-100 border border-stone-200';
+                sourcesTab.className = 'px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 bg-stone-800 text-white shadow-lg shadow-stone-800/20 flex items-center gap-2';
+            }
+        }
+
+        // Strategy expand/collapse
+        function toggleStrategy(strategyName) {
+            const content = document.getElementById(strategyName + '-content');
+            const chevron = document.getElementById(strategyName + '-chevron');
+            
+            if (content.classList.contains('collapsed')) {
+                content.classList.remove('collapsed');
+                content.classList.add('expanded');
+                chevron.classList.add('rotate-180');
+            } else {
+                content.classList.remove('expanded');
+                content.classList.add('collapsed');
+                chevron.classList.remove('rotate-180');
+            }
+        }
+    </script>
+</body>
+</html>
